@@ -14,11 +14,15 @@ class URLSessionHTTPClient {
         self.session = session
     }
     
+    struct UnexpectedValuesRepresentation: Error {}
+    
     func get(from url: URL, completion: @escaping (HTTPClientResult) -> Void) {
 //        let url = URL(string: "htttp://some-url.com")!
         session.dataTask(with: url) { _, _, error in
             if let error {
                 completion(.failure(error))
+            } else {
+                completion(.failure(UnexpectedValuesRepresentation()))
             }
         }.resume()
     }
