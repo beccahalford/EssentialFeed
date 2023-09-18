@@ -9,7 +9,7 @@ import Foundation
 
 public class CodableFeedStore: FeedStore {
     
-    public struct Cache: Codable {
+    private struct Cache: Codable {
         let feed: [CodableFeedImage]
         let timestamp: Date
         
@@ -18,7 +18,7 @@ public class CodableFeedStore: FeedStore {
         }
     }
     
-    public struct CodableFeedImage: Codable {
+    private struct CodableFeedImage: Codable {
         private let id: UUID
         private let description: String?
         private let location: String?
