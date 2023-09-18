@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		460B59862AB85A7A0074E763 /* CodableFeedStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460B59852AB85A7A0074E763 /* CodableFeedStoreTests.swift */; };
 		460D953329D6DECF004DBBBD /* CacheFeedUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460D953229D6DECF004DBBBD /* CacheFeedUseCaseTests.swift */; };
 		460D953729D6DFE9004DBBBD /* LocalFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460D953629D6DFE9004DBBBD /* LocalFeedLoader.swift */; };
 		462E4A6D29FBDDD4004DB74E /* RemoteFeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462E4A6C29FBDDD4004DB74E /* RemoteFeedItem.swift */; };
@@ -55,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		460B59852AB85A7A0074E763 /* CodableFeedStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableFeedStoreTests.swift; sourceTree = "<group>"; };
 		460D953229D6DECF004DBBBD /* CacheFeedUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheFeedUseCaseTests.swift; sourceTree = "<group>"; };
 		460D953629D6DFE9004DBBBD /* LocalFeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFeedLoader.swift; sourceTree = "<group>"; };
 		462E4A6C29FBDDD4004DB74E /* RemoteFeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedItem.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				460D953229D6DECF004DBBBD /* CacheFeedUseCaseTests.swift */,
 				46ACA7AF29FFAE2B00AB82E6 /* LoadFeedFromCacheUseCaseTests.swift */,
 				46A8A0972A20A19E00563494 /* ValidateFeedCacheUseCaseTests.swift */,
+				460B59852AB85A7A0074E763 /* CodableFeedStoreTests.swift */,
 			);
 			path = FeedCache;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				460B59862AB85A7A0074E763 /* CodableFeedStoreTests.swift in Sources */,
 				468ECE492993E8800049AFF5 /* LoadFeedFromRemoteUseCaseTests.swift in Sources */,
 				46E856F02997C4F5001F0EFC /* URLSessionHTTPClientTests.swift in Sources */,
 				46A8A09C2A20AC4700563494 /* SharedTestHelpers.swift in Sources */,
