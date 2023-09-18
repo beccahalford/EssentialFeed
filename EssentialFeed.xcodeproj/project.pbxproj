@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		460B59862AB85A7A0074E763 /* CodableFeedStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460B59852AB85A7A0074E763 /* CodableFeedStoreTests.swift */; };
+		460B59882AB8AABB0074E763 /* CodableFeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460B59872AB8AABB0074E763 /* CodableFeedStore.swift */; };
 		460D953329D6DECF004DBBBD /* CacheFeedUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460D953229D6DECF004DBBBD /* CacheFeedUseCaseTests.swift */; };
 		460D953729D6DFE9004DBBBD /* LocalFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460D953629D6DFE9004DBBBD /* LocalFeedLoader.swift */; };
 		462E4A6D29FBDDD4004DB74E /* RemoteFeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462E4A6C29FBDDD4004DB74E /* RemoteFeedItem.swift */; };
@@ -57,6 +58,7 @@
 
 /* Begin PBXFileReference section */
 		460B59852AB85A7A0074E763 /* CodableFeedStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableFeedStoreTests.swift; sourceTree = "<group>"; };
+		460B59872AB8AABB0074E763 /* CodableFeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableFeedStore.swift; sourceTree = "<group>"; };
 		460D953229D6DECF004DBBBD /* CacheFeedUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheFeedUseCaseTests.swift; sourceTree = "<group>"; };
 		460D953629D6DFE9004DBBBD /* LocalFeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFeedLoader.swift; sourceTree = "<group>"; };
 		462E4A6C29FBDDD4004DB74E /* RemoteFeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedItem.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				46BD20C629EBF63F00B2C779 /* FeedStore.swift */,
 				462E4A6E29FBDE18004DB74E /* LocalFeedImage.swift */,
 				46A8A09D2A20C58300563494 /* FeedCachePolicy.swift */,
+				460B59872AB8AABB0074E763 /* CodableFeedStore.swift */,
 			);
 			path = FeedCache;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				46A1BC76298FDEEB00921DD8 /* FeedLoader.swift in Sources */,
 				4653F57C2997A00200A1BD9A /* FeedItemMapper.swift in Sources */,
 				462E4A6D29FBDDD4004DB74E /* RemoteFeedItem.swift in Sources */,
+				460B59882AB8AABB0074E763 /* CodableFeedStore.swift in Sources */,
 				46A8A09E2A20C58300563494 /* FeedCachePolicy.swift in Sources */,
 				46A1BC74298FDD6E00921DD8 /* FeedItem.swift in Sources */,
 				460D953729D6DFE9004DBBBD /* LocalFeedLoader.swift in Sources */,
