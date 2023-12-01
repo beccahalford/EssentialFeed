@@ -26,7 +26,7 @@
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="FeedImageCell" rowHeight="580" id="agy-NV-hiL">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="FeedImageCell" rowHeight="580" id="agy-NV-hiL" customClass="FeedImageCell" customModule="Prototype" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="66" width="393" height="580"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="agy-NV-hiL" id="FqD-nD-SLL">
@@ -56,7 +56,7 @@
                                                                 <constraint firstItem="RLY-Ub-aLD" firstAttribute="top" secondItem="Cli-zB-ofP" secondAttribute="top" constant="3" id="x7D-yj-DBp"/>
                                                             </constraints>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IS3-Bz-SeU">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IS3-Bz-SeU" userLabel="Location, Location">
                                                             <rect key="frame" x="16" y="0.0" width="337" height="36"/>
                                                             <string key="text">Location,
 Location</string>
@@ -108,6 +108,12 @@ Location</string>
                                         <constraint firstItem="FtO-ac-Pjk" firstAttribute="leading" secondItem="FqD-nD-SLL" secondAttribute="leadingMargin" id="tHc-tK-5sS"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descriptionLabel" destination="S7j-fL-11Z" id="wIt-O2-0Jt"/>
+                                    <outlet property="feedImageView" destination="GGE-iO-929" id="CC3-dI-MWd"/>
+                                    <outlet property="locationContainer" destination="2th-tQ-1cU" id="80c-1G-aJT"/>
+                                    <outlet property="locationLabel" destination="IS3-Bz-SeU" id="bny-Ql-B52"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
