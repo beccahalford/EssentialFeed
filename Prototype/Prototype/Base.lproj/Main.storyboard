@@ -7,17 +7,27 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--My Feed-->
         <scene sceneID="hKZ-rf-kBQ">
             <objects>
-                <tableViewController id="kMY-b2-IRQ" sceneMemberID="viewController">
+                <tableViewController id="kMY-b2-IRQ" customClass="FeedViewController" customModule="Prototype" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="v4A-Pe-4AL">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="KmD-Gk-ngm">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="16"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </view>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="l4s-jr-5vS">
+                            <rect key="frame" x="0.0" y="674" width="393" height="16"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="FeedImageCell" rowHeight="580" id="agy-NV-hiL">
-                                <rect key="frame" x="0.0" y="50" width="393" height="580"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="FeedImageCell" rowHeight="580" id="agy-NV-hiL" customClass="FeedImageCell" customModule="Prototype" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="66" width="393" height="580"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="agy-NV-hiL" id="FqD-nD-SLL">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="580"/>
@@ -46,7 +56,7 @@
                                                                 <constraint firstItem="RLY-Ub-aLD" firstAttribute="top" secondItem="Cli-zB-ofP" secondAttribute="top" constant="3" id="x7D-yj-DBp"/>
                                                             </constraints>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IS3-Bz-SeU">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IS3-Bz-SeU" userLabel="Location, Location">
                                                             <rect key="frame" x="16" y="0.0" width="337" height="36"/>
                                                             <string key="text">Location,
 Location</string>
@@ -98,6 +108,12 @@ Location</string>
                                         <constraint firstItem="FtO-ac-Pjk" firstAttribute="leading" secondItem="FqD-nD-SLL" secondAttribute="leadingMargin" id="tHc-tK-5sS"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descriptionLabel" destination="S7j-fL-11Z" id="wIt-O2-0Jt"/>
+                                    <outlet property="feedImageView" destination="GGE-iO-929" id="CC3-dI-MWd"/>
+                                    <outlet property="locationContainer" destination="2th-tQ-1cU" id="80c-1G-aJT"/>
+                                    <outlet property="locationLabel" destination="IS3-Bz-SeU" id="bny-Ql-B52"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -105,7 +121,7 @@ Location</string>
                             <outlet property="delegate" destination="kMY-b2-IRQ" id="XQ8-lD-5by"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="B10-9T-UZS"/>
+                    <navigationItem key="navigationItem" title="My Feed" id="B10-9T-UZS"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KEy-fx-1Gv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
