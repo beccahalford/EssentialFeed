@@ -386,6 +386,7 @@ private extension FeedViewController {
         endAppearanceTransition()
     }
     
+    
     func replaceRefreshControlWithFakeForiOS17Support() {
         let fake = FakeRefreshControl()
         
@@ -396,6 +397,7 @@ private extension FeedViewController {
         }
 
         refreshControl = fake
+        refreshController?.view = fake
     }
     
     func numberOfRenderedFeedImageViews() -> Int {
