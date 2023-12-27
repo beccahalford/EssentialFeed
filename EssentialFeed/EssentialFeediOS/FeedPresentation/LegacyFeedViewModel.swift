@@ -7,7 +7,7 @@
 
 import EssentialFeed
 
-//final class FeedViewModel {
+//final class LegacyFeedViewModel {
 //    typealias Observer<T> = (T) -> Void
 //    
 //    private let feedLoader: FeedLoader
