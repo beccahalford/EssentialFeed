@@ -7,9 +7,13 @@
 
 import UIKit
 
-public final class FeedViewController: UITableViewController, UITableViewDataSourcePrefetching {
+protocol FeedViewControllerDelegate {
+    func didRequestFeedRefresh()
+}
+
+public final class FeedViewController: UITableViewController, UITableViewDataSourcePrefetching, FeedLoadingView {
     private var onViewIsAppearing: ((FeedViewController) -> Void)?
-    @IBOutlet public var refreshController: FeedRefreshViewController?
+    var delegate: FeedViewControllerDelegate?
     
     var tableModel = [FeedImageCellController]() {
         didSet { tableView.reloadData() }
@@ -19,18 +23,30 @@ public final class FeedViewController: UITableViewController, UITableViewDataSou
         super.viewDidLoad()
         
         onViewIsAppearing = { vc in
-            vc.refreshController?.view?.beginRefreshing()
+            vc.refreshControl?.beginRefreshing()
             vc.onViewIsAppearing = nil
         }
         
         tableView.prefetchDataSource = self
-        refreshController?.refresh()
+        refresh()
     }
-    
+
     override public func viewIsAppearing(_ animated: Bool) {
         super.viewIsAppearing(animated)
 
         onViewIsAppearing?(self)
+    }
+    
+    @IBAction private func refresh() {
+        delegate?.didRequestFeedRefresh()
+    }
+    
+    func display(_ viewModel: FeedLoadingViewModel) {
+        if viewModel.isLoading {
+            refreshControl?.beginRefreshing()
+        } else {
+            refreshControl?.endRefreshing()
+        }
     }
     
     public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
