@@ -27,6 +27,7 @@ public final class FeedViewController: UITableViewController, UITableViewDataSou
             vc.onViewIsAppearing = nil
         }
         
+        title = "My Feed"
         refresh()
     }
 
