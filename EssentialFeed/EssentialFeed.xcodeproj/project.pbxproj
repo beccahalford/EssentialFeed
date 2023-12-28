@@ -759,6 +759,7 @@
 				en,
 				Base,
 				"pt-BR",
+				el,
 			);
 			mainGroup = 46A1BC4F298FDD5900921DD8;
 			productRefGroup = 46A1BC5A298FDD5900921DD8 /* Products */;
