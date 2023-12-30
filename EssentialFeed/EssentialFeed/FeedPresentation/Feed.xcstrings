@@ -7,7 +7,7 @@
       "localizations" : {
         "el" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Δεν ήταν δυνατή η σύνδεση στο διακομιστή"
           }
         },
