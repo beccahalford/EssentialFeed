@@ -23,6 +23,10 @@ extension FeedViewController {
         ds?.tableView?(tableView, cancelPrefetchingForRowsAt: [index])
     }
     
+    var errorMessage: String? {
+        return errorView?.message
+    }
+    
     var isShowingLoadingIndicator: Bool {
         refreshControl?.isRefreshing == true
     }
@@ -56,7 +60,6 @@ extension FeedViewController {
         beginAppearanceTransition(true, animated: false)
         endAppearanceTransition()
     }
-    
     
     func replaceRefreshControlWithFakeForiOS17Support() {
         let fake = FakeRefreshControl()
