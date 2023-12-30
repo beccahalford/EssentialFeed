@@ -51,6 +51,7 @@
 		4651256B2B401D1A001F8829 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4651256A2B401D1A001F8829 /* ErrorView.swift */; };
 		4651256D2B401D4A001F8829 /* UIRefreshControl+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4651256C2B401D4A001F8829 /* UIRefreshControl+Helpers.swift */; };
 		465125702B40216E001F8829 /* FeedPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4651256F2B40216E001F8829 /* FeedPresenterTests.swift */; };
+		465125722B402BB2001F8829 /* Feed.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 465125712B402BB2001F8829 /* Feed.xcstrings */; };
 		4653F57A29979F8800A1BD9A /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4653F57929979F8800A1BD9A /* HTTPClient.swift */; };
 		4653F57C2997A00200A1BD9A /* FeedItemMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4653F57B2997A00200A1BD9A /* FeedItemMapper.swift */; };
 		4654872A2B2C634400360D3A /* LegacyFeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465487292B2C634400360D3A /* LegacyFeedViewModel.swift */; };
@@ -192,6 +193,7 @@
 		4651256A2B401D1A001F8829 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		4651256C2B401D4A001F8829 /* UIRefreshControl+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIRefreshControl+Helpers.swift"; sourceTree = "<group>"; };
 		4651256F2B40216E001F8829 /* FeedPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPresenterTests.swift; sourceTree = "<group>"; };
+		465125712B402BB2001F8829 /* Feed.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Feed.xcstrings; sourceTree = "<group>"; };
 		4653F57929979F8800A1BD9A /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		4653F57B2997A00200A1BD9A /* FeedItemMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemMapper.swift; sourceTree = "<group>"; };
 		465487292B2C634400360D3A /* LegacyFeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegacyFeedViewModel.swift; sourceTree = "<group>"; };
@@ -435,6 +437,7 @@
 			isa = PBXGroup;
 			children = (
 				4651256F2B40216E001F8829 /* FeedPresenterTests.swift */,
+				465125712B402BB2001F8829 /* Feed.xcstrings */,
 			);
 			path = FeedPresentation;
 			sourceTree = "<group>";
@@ -835,6 +838,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				465125722B402BB2001F8829 /* Feed.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
