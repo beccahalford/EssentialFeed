@@ -14,6 +14,10 @@
 		4619C7D92B481B77006E43F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4619C7D82B481B77006E43F3 /* Assets.xcassets */; };
 		4619C7DC2B481B77006E43F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4619C7DA2B481B77006E43F3 /* LaunchScreen.storyboard */; };
 		4619C7EC2B481D92006E43F3 /* EssentialAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4619C7EB2B481D92006E43F3 /* EssentialAppTests.swift */; };
+		4619C8252B482707006E43F3 /* EssentialFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4619C7FC2B4826A9006E43F3 /* EssentialFeed.framework */; };
+		4619C8262B482707006E43F3 /* EssentialFeed.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4619C7FC2B4826A9006E43F3 /* EssentialFeed.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4619C8272B482707006E43F3 /* EssentialFeediOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4619C8042B4826A9006E43F3 /* EssentialFeediOS.framework */; };
+		4619C8282B482707006E43F3 /* EssentialFeediOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4619C8042B4826A9006E43F3 /* EssentialFeediOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,7 +28,106 @@
 			remoteGlobalIDString = 4619C7CB2B481B75006E43F3;
 			remoteInfo = EssentialApp;
 		};
+		4619C7FB2B4826A9006E43F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4619C7F22B4826A9006E43F3 /* EssentialFeed.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 46A1BC59298FDD5900921DD8;
+			remoteInfo = EssentialFeed;
+		};
+		4619C7FD2B4826A9006E43F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4619C7F22B4826A9006E43F3 /* EssentialFeed.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 46A1BC63298FDD5900921DD8;
+			remoteInfo = EssentialFeedTests;
+		};
+		4619C7FF2B4826A9006E43F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4619C7F22B4826A9006E43F3 /* EssentialFeed.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 46FE693429A906F0009A8E3D;
+			remoteInfo = EssentialFeedAPIEndToEndTests;
+		};
+		4619C8012B4826A9006E43F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4619C7F22B4826A9006E43F3 /* EssentialFeed.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 46C956372ABC470D00B6B70A;
+			remoteInfo = EssentialFeedCacheIntegrationTests;
+		};
+		4619C8032B4826A9006E43F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4619C7F22B4826A9006E43F3 /* EssentialFeed.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 46C20E222B1A3D880020C943;
+			remoteInfo = EssentialFeediOS;
+		};
+		4619C8052B4826A9006E43F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4619C7F22B4826A9006E43F3 /* EssentialFeed.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 46C20E292B1A3D880020C943;
+			remoteInfo = EssentialFeediOSTests;
+		};
+		4619C8102B4826B7006E43F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4619C8072B4826B7006E43F3 /* EssentialFeed.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 46A1BC59298FDD5900921DD8;
+			remoteInfo = EssentialFeed;
+		};
+		4619C8122B4826B7006E43F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4619C8072B4826B7006E43F3 /* EssentialFeed.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 46A1BC63298FDD5900921DD8;
+			remoteInfo = EssentialFeedTests;
+		};
+		4619C8142B4826B7006E43F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4619C8072B4826B7006E43F3 /* EssentialFeed.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 46FE693429A906F0009A8E3D;
+			remoteInfo = EssentialFeedAPIEndToEndTests;
+		};
+		4619C8162B4826B7006E43F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4619C8072B4826B7006E43F3 /* EssentialFeed.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 46C956372ABC470D00B6B70A;
+			remoteInfo = EssentialFeedCacheIntegrationTests;
+		};
+		4619C8182B4826B7006E43F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4619C8072B4826B7006E43F3 /* EssentialFeed.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 46C20E222B1A3D880020C943;
+			remoteInfo = EssentialFeediOS;
+		};
+		4619C81A2B4826B7006E43F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4619C8072B4826B7006E43F3 /* EssentialFeed.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 46C20E292B1A3D880020C943;
+			remoteInfo = EssentialFeediOSTests;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4619C8292B482707006E43F3 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4619C8262B482707006E43F3 /* EssentialFeed.framework in Embed Frameworks */,
+				4619C8282B482707006E43F3 /* EssentialFeediOS.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4619C7CC2B481B75006E43F3 /* EssentialApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EssentialApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -37,6 +140,8 @@
 		4619C7DD2B481B77006E43F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4619C7E92B481D92006E43F3 /* EssentialAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4619C7EB2B481D92006E43F3 /* EssentialAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialAppTests.swift; sourceTree = "<group>"; };
+		4619C7F22B4826A9006E43F3 /* EssentialFeed.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EssentialFeed.xcodeproj; path = ../../EssentialFeed/EssentialFeed.xcodeproj; sourceTree = "<group>"; };
+		4619C8072B4826B7006E43F3 /* EssentialFeed.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EssentialFeed.xcodeproj; path = ../../EssentialFeed/EssentialFeed.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +149,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4619C8252B482707006E43F3 /* EssentialFeed.framework in Frameworks */,
+				4619C8272B482707006E43F3 /* EssentialFeediOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +170,7 @@
 				4619C7CE2B481B76006E43F3 /* EssentialApp */,
 				4619C7EA2B481D92006E43F3 /* EssentialAppTests */,
 				4619C7CD2B481B75006E43F3 /* Products */,
+				4619C81E2B482707006E43F3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,9 +200,44 @@
 		4619C7EA2B481D92006E43F3 /* EssentialAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				4619C7F22B4826A9006E43F3 /* EssentialFeed.xcodeproj */,
+				4619C8072B4826B7006E43F3 /* EssentialFeed.xcodeproj */,
 				4619C7EB2B481D92006E43F3 /* EssentialAppTests.swift */,
 			);
 			path = EssentialAppTests;
+			sourceTree = "<group>";
+		};
+		4619C7F32B4826A9006E43F3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4619C7FC2B4826A9006E43F3 /* EssentialFeed.framework */,
+				4619C7FE2B4826A9006E43F3 /* EssentialFeedTests.xctest */,
+				4619C8002B4826A9006E43F3 /* EssentialFeedAPIEndToEndTests.xctest */,
+				4619C8022B4826A9006E43F3 /* EssentialFeedCacheIntegrationTests.xctest */,
+				4619C8042B4826A9006E43F3 /* EssentialFeediOS.framework */,
+				4619C8062B4826A9006E43F3 /* EssentialFeediOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4619C8082B4826B7006E43F3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4619C8112B4826B7006E43F3 /* EssentialFeed.framework */,
+				4619C8132B4826B7006E43F3 /* EssentialFeedTests.xctest */,
+				4619C8152B4826B7006E43F3 /* EssentialFeedAPIEndToEndTests.xctest */,
+				4619C8172B4826B7006E43F3 /* EssentialFeedCacheIntegrationTests.xctest */,
+				4619C8192B4826B7006E43F3 /* EssentialFeediOS.framework */,
+				4619C81B2B4826B7006E43F3 /* EssentialFeediOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4619C81E2B482707006E43F3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -107,6 +250,7 @@
 				4619C7C82B481B75006E43F3 /* Sources */,
 				4619C7C92B481B75006E43F3 /* Frameworks */,
 				4619C7CA2B481B75006E43F3 /* Resources */,
+				4619C8292B482707006E43F3 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -165,6 +309,16 @@
 			mainGroup = 4619C7C32B481B75006E43F3;
 			productRefGroup = 4619C7CD2B481B75006E43F3 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 4619C7F32B4826A9006E43F3 /* Products */;
+					ProjectRef = 4619C7F22B4826A9006E43F3 /* EssentialFeed.xcodeproj */;
+				},
+				{
+					ProductGroup = 4619C8082B4826B7006E43F3 /* Products */;
+					ProjectRef = 4619C8072B4826B7006E43F3 /* EssentialFeed.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				4619C7CB2B481B75006E43F3 /* EssentialApp */,
@@ -172,6 +326,93 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		4619C7FC2B4826A9006E43F3 /* EssentialFeed.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = EssentialFeed.framework;
+			remoteRef = 4619C7FB2B4826A9006E43F3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4619C7FE2B4826A9006E43F3 /* EssentialFeedTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = EssentialFeedTests.xctest;
+			remoteRef = 4619C7FD2B4826A9006E43F3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4619C8002B4826A9006E43F3 /* EssentialFeedAPIEndToEndTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = EssentialFeedAPIEndToEndTests.xctest;
+			remoteRef = 4619C7FF2B4826A9006E43F3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4619C8022B4826A9006E43F3 /* EssentialFeedCacheIntegrationTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = EssentialFeedCacheIntegrationTests.xctest;
+			remoteRef = 4619C8012B4826A9006E43F3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4619C8042B4826A9006E43F3 /* EssentialFeediOS.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = EssentialFeediOS.framework;
+			remoteRef = 4619C8032B4826A9006E43F3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4619C8062B4826A9006E43F3 /* EssentialFeediOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = EssentialFeediOSTests.xctest;
+			remoteRef = 4619C8052B4826A9006E43F3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4619C8112B4826B7006E43F3 /* EssentialFeed.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = EssentialFeed.framework;
+			remoteRef = 4619C8102B4826B7006E43F3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4619C8132B4826B7006E43F3 /* EssentialFeedTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = EssentialFeedTests.xctest;
+			remoteRef = 4619C8122B4826B7006E43F3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4619C8152B4826B7006E43F3 /* EssentialFeedAPIEndToEndTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = EssentialFeedAPIEndToEndTests.xctest;
+			remoteRef = 4619C8142B4826B7006E43F3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4619C8172B4826B7006E43F3 /* EssentialFeedCacheIntegrationTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = EssentialFeedCacheIntegrationTests.xctest;
+			remoteRef = 4619C8162B4826B7006E43F3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4619C8192B4826B7006E43F3 /* EssentialFeediOS.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = EssentialFeediOS.framework;
+			remoteRef = 4619C8182B4826B7006E43F3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4619C81B2B4826B7006E43F3 /* EssentialFeediOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = EssentialFeediOSTests.xctest;
+			remoteRef = 4619C81A2B4826B7006E43F3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		4619C7CA2B481B75006E43F3 /* Resources */ = {
@@ -374,8 +615,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -402,8 +643,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
