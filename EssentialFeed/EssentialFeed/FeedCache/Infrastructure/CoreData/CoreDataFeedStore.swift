@@ -9,7 +9,8 @@ import CoreData
 
 public final class CoreDataFeedStore {
     private static let modelName = "FeedStore"
-    private static let model = NSManagedObjectModel.with(name: modelName, in: Bundle(for: CoreDataFeedStore.self))
+    private static let bundle = Bundle(for: CoreDataFeedStore.self)
+    private static let model = NSManagedObjectModel.with(name: modelName, in: bundle)
 
     private let container: NSPersistentContainer
     private let context: NSManagedObjectContext
@@ -23,7 +24,7 @@ public final class CoreDataFeedStore {
         guard let model = CoreDataFeedStore.model else {
             throw StoreError.modelNotFound
         }
-
+        
         do {
             container = try NSPersistentContainer.load(name: CoreDataFeedStore.modelName, model: model, url: storeURL)
             context = container.newBackgroundContext()
