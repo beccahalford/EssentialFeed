@@ -30,6 +30,7 @@
 		46BBB4402B4C12DA00335765 /* FeedLoaderCacheDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBB43F2B4C12DA00335765 /* FeedLoaderCacheDecorator.swift */; };
 		46BBB4422B4C144500335765 /* FeedImageDataLoaderCacheDecoratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBB4412B4C144500335765 /* FeedImageDataLoaderCacheDecoratorTests.swift */; };
 		46BBB4442B4C151800335765 /* XCTestCase+FeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBB4432B4C151800335765 /* XCTestCase+FeedImageDataLoader.swift */; };
+		46BBB4462B4C16B200335765 /* FeedImageDataLoaderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBB4452B4C16B200335765 /* FeedImageDataLoaderSpy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -166,6 +167,7 @@
 		46BBB43F2B4C12DA00335765 /* FeedLoaderCacheDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderCacheDecorator.swift; sourceTree = "<group>"; };
 		46BBB4412B4C144500335765 /* FeedImageDataLoaderCacheDecoratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderCacheDecoratorTests.swift; sourceTree = "<group>"; };
 		46BBB4432B4C151800335765 /* XCTestCase+FeedImageDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FeedImageDataLoader.swift"; sourceTree = "<group>"; };
+		46BBB4452B4C16B200335765 /* FeedImageDataLoaderSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderSpy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,6 +282,7 @@
 				46BBB4392B4C07DD00335765 /* FeedLoaderStub.swift */,
 				46BBB43B2B4C08EE00335765 /* XCTestCase+FeedLoader.swift */,
 				46BBB4432B4C151800335765 /* XCTestCase+FeedImageDataLoader.swift */,
+				46BBB4452B4C16B200335765 /* FeedImageDataLoaderSpy.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -499,6 +502,7 @@
 				46A0BEE82B483CC30063D3A0 /* FeedLoaderWithFallbackCompositeTests.swift in Sources */,
 				46BBB43A2B4C07DD00335765 /* FeedLoaderStub.swift in Sources */,
 				46A0BEFC2B4850BF0063D3A0 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
+				46BBB4462B4C16B200335765 /* FeedImageDataLoaderSpy.swift in Sources */,
 				46BBB4442B4C151800335765 /* XCTestCase+FeedImageDataLoader.swift in Sources */,
 				46BBB43C2B4C08EE00335765 /* XCTestCase+FeedLoader.swift in Sources */,
 				46BBB4422B4C144500335765 /* FeedImageDataLoaderCacheDecoratorTests.swift in Sources */,
