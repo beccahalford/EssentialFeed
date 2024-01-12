@@ -52,6 +52,7 @@
 		46D266C02B51572400DEA89D /* FeedImageDataLoaderPresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D266962B5154DB00DEA89D /* FeedImageDataLoaderPresentationAdapter.swift */; };
 		46D266C12B51572700DEA89D /* FeedLoaderPresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D266972B5154DB00DEA89D /* FeedLoaderPresentationAdapter.swift */; };
 		46D266C22B51572900DEA89D /* FeedViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D266982B5154DB00DEA89D /* FeedViewAdapter.swift */; };
+		46D266C52B5157B100DEA89D /* FeedAcceptanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D266C42B5157B100DEA89D /* FeedAcceptanceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -218,6 +219,7 @@
 		46D266AE2B51550B00DEA89D /* FeedUIIntegrationTests+LoaderSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedUIIntegrationTests+LoaderSpy.swift"; sourceTree = "<group>"; };
 		46D266AF2B51550C00DEA89D /* FeedUIIntegrationTests+Assertions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedUIIntegrationTests+Assertions.swift"; sourceTree = "<group>"; };
 		46D266B52B51552D00DEA89D /* FeedUIIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedUIIntegrationTests.swift; sourceTree = "<group>"; };
+		46D266C42B5157B100DEA89D /* FeedAcceptanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedAcceptanceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -300,6 +302,7 @@
 				46BBB4372B4C054A00335765 /* FeedLoaderCacheDecoratorTests.swift */,
 				46BBB4412B4C144500335765 /* FeedImageDataLoaderCacheDecoratorTests.swift */,
 				46D266522B514DAB00DEA89D /* SceneDelegateTests.swift */,
+				46D266C42B5157B100DEA89D /* FeedAcceptanceTests.swift */,
 			);
 			path = EssentialAppTests;
 			sourceTree = "<group>";
@@ -649,6 +652,7 @@
 				46D266B62B51552D00DEA89D /* FeedUIIntegrationTests.swift in Sources */,
 				46BBB43A2B4C07DD00335765 /* FeedLoaderStub.swift in Sources */,
 				46A0BEFC2B4850BF0063D3A0 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
+				46D266C52B5157B100DEA89D /* FeedAcceptanceTests.swift in Sources */,
 				46BBB4462B4C16B200335765 /* FeedImageDataLoaderSpy.swift in Sources */,
 				46BBB4442B4C151800335765 /* XCTestCase+FeedImageDataLoader.swift in Sources */,
 				46BBB43C2B4C08EE00335765 /* XCTestCase+FeedLoader.swift in Sources */,

@@ -11,7 +11,6 @@ import EssentialFeediOS
 
 final class SceneDelegateTests: XCTestCase {
 
-
     func test_sceneWillConnectToSession_configuresRootViewController() {
         let sut = SceneDelegate()
         sut.window = UIWindow()
