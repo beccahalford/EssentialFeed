@@ -6,7 +6,7 @@
 //
 
 import Foundation
-@testable import EssentialFeed
+import EssentialFeed
 
 
 func anyData() -> Data {

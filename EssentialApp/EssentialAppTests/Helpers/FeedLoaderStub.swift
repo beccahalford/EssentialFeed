@@ -5,7 +5,7 @@
 //  Created by Rebecca Woodman-Halford on 08/01/2024.
 //
 
-@testable import EssentialFeed
+import EssentialFeed
 
 class FeedLoaderStub: FeedLoader {
     private let result: FeedLoader.Result

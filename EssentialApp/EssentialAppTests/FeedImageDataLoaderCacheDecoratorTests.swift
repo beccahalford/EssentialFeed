@@ -8,8 +8,8 @@
 import XCTest
 
 import XCTest
-@testable import EssentialFeed
-@testable import EssentialApp
+import EssentialFeed
+import EssentialApp
 
 final class FeedImageDataLoaderCacheDecoratorTests: XCTestCase, FeedImageDataLoaderTestCase {
 
