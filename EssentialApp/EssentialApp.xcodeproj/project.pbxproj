@@ -54,6 +54,7 @@
 		46D266C22B51572900DEA89D /* FeedViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D266982B5154DB00DEA89D /* FeedViewAdapter.swift */; };
 		46D266C52B5157B100DEA89D /* FeedAcceptanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D266C42B5157B100DEA89D /* FeedAcceptanceTests.swift */; };
 		46D266C72B5162BC00DEA89D /* HTTPClientStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D266C62B5162BC00DEA89D /* HTTPClientStub.swift */; };
+		46D266C92B51630A00DEA89D /* InMemoryFeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D266C82B51630A00DEA89D /* InMemoryFeedStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -222,6 +223,7 @@
 		46D266B52B51552D00DEA89D /* FeedUIIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedUIIntegrationTests.swift; sourceTree = "<group>"; };
 		46D266C42B5157B100DEA89D /* FeedAcceptanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedAcceptanceTests.swift; sourceTree = "<group>"; };
 		46D266C62B5162BC00DEA89D /* HTTPClientStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientStub.swift; sourceTree = "<group>"; };
+		46D266C82B51630A00DEA89D /* InMemoryFeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryFeedStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -359,6 +361,7 @@
 				46BBB4432B4C151800335765 /* XCTestCase+FeedImageDataLoader.swift */,
 				46BBB4452B4C16B200335765 /* FeedImageDataLoaderSpy.swift */,
 				46D266C62B5162BC00DEA89D /* HTTPClientStub.swift */,
+				46D266C82B51630A00DEA89D /* InMemoryFeedStore.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -671,6 +674,7 @@
 				46D266BA2B5156E300DEA89D /* UIImage+TestHelpers.swift in Sources */,
 				4619C7EC2B481D92006E43F3 /* EssentialAppTests.swift in Sources */,
 				46D266602B514DB500DEA89D /* SceneDelegateTests.swift in Sources */,
+				46D266C92B51630A00DEA89D /* InMemoryFeedStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
