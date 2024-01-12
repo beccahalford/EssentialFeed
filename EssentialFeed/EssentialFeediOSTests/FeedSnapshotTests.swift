@@ -19,7 +19,6 @@ final class FeedSnapshotTests: XCTestCase {
         record(snapshot: sut.snapshot(), named: "EMPTY_FEED")
     }
     
-    
     func test_feedWithContent() {
         let sut = makeSUT()
 
@@ -27,6 +26,8 @@ final class FeedSnapshotTests: XCTestCase {
 
         record(snapshot: sut.snapshot(), named: "FEED_WITH_CONTENT")
     }
+    
+    
     
     // MARK: - Helpers
     
