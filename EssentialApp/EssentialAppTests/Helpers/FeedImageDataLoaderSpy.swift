@@ -6,7 +6,7 @@
 //
 
 import Foundation
-@testable import EssentialFeed
+import EssentialFeed
 
 class FeedImageDataLoaderSpy: FeedImageDataLoader {
     private var messages = [(url: URL, completion: (FeedImageDataLoader.Result) -> Void)]()
