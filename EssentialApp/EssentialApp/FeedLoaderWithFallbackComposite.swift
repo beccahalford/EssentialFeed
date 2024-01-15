@@ -5,7 +5,6 @@
 //  Created by Rebecca Woodman-Halford on 05/01/2024.
 //
 
-import Foundation
 import EssentialFeed
 
 public class FeedLoaderWithFallbackComposite: FeedLoader {
