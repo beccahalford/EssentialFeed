@@ -5,7 +5,6 @@
 //  Created by Rebecca Woodman-Halford on 08/01/2024.
 //
 
-import Foundation
 import EssentialFeed
 
 public final class FeedLoaderCacheDecorator: FeedLoader {
