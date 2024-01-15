@@ -9,6 +9,8 @@ import Combine
 import EssentialFeed
 import Foundation
 
+// MARK: - FeedImageDataLoader
+
 public extension FeedImageDataLoader {
     typealias Publisher = AnyPublisher<Data, Error>
 
@@ -38,6 +40,8 @@ private extension FeedImageDataCache {
         save(data, for: url) { _ in }
     }
 }
+
+// MARK: - FeedLoader
 
 public extension FeedLoader {
     typealias Publisher = AnyPublisher<[FeedImage], Error>
