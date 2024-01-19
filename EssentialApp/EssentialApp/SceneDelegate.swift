@@ -23,13 +23,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             .defaultDirectoryURL()
             .appendingPathComponent("feed-store.sqlite"))
     }()
-    
+    private let remoteURL = URL(string: "https://ile-api.essentialdeveloper.com/essential-feed/v1/feed")!
     private lazy var localFeedLoader: LocalFeedLoader = {
         LocalFeedLoader(store: store, currentDate: Date.init)
     }()
     private lazy var remoteFeedLoader = {
-        let url = URL(string: "https://ile-api.essentialdeveloper.com/essential-feed/v1/feed")!
-        return RemoteFeedLoader(url: url, client: httpClient)
+//        let url = URL(string: "https://ile-api.essentialdeveloper.com/essential-feed/v1/feed")!
+//        return RemoteFeedLoader(url: url, client: httpClient)
+        return RemoteLoader(url: remoteURL, client: httpClient, mapper: FeedItemsMapper.map)
     }()
     
     convenience init(httpClient: HTTPClient, store: FeedStore & FeedImageDataStore) {
@@ -81,22 +82,35 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         localFeedLoader.validateCache { _ in }
     }
     
-    private func makeRemoteFeedLoaderWithLocalFallback() -> FeedLoader.Publisher {
-        remoteFeedLoader
-            .loadPublisher()
+    private func makeRemoteFeedLoaderWithLocalFallback() -> AnyPublisher<[FeedImage], Error> {
+        return httpClient
+            .getPublisher(url: remoteURL)
+            .tryMap(FeedItemsMapper.map)
             .caching(to: localFeedLoader)
             .fallback(to: localFeedLoader.loadPublisher)
+//        remoteFeedLoader
+//            .loadPublisher()
+//            .caching(to: localFeedLoader)
+//            .fallback(to: localFeedLoader.loadPublisher)
     }
     
     private func makeLocalImageLoaderWithRemoteFallback(url: URL) -> FeedImageDataLoader.Publisher {
-        let remoteImageLoader = RemoteFeedImageDataLoader(client: httpClient)
+//        let remoteImageLoader = RemoteFeedImageDataLoader(client: httpClient)
         let localImageLoader = LocalFeedImageDataLoader(store: store)
 
+//        return localImageLoader
+//            .loadImageDataPublisher(from: url)
+//            .fallback(to: {
+//                remoteImageLoader
+//                    .loadImageDataPublisher(from: url)
+//                    .caching(to: localImageLoader, using: url)
+//            })
         return localImageLoader
             .loadImageDataPublisher(from: url)
-            .fallback(to: {
-                remoteImageLoader
-                    .loadImageDataPublisher(from: url)
+            .fallback(to: { [httpClient] in
+                httpClient
+                    .getPublisher(url: url)
+                    .tryMap(FeedImageDataMapper.map)
                     .caching(to: localImageLoader, using: url)
             })
     }
@@ -106,3 +120,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //    }
     
 }
+
+//extension RemoteLoader: FeedLoader where Resource == [FeedImage] {}
+
+//public typealias RemoteFeedLoader = RemoteLoader<[FeedImage]>
+//
+//public extension RemoteFeedLoader {
+//    convenience init(url: URL, client: HTTPClient) {
+//        self.init(url: url, client: client, mapper: FeedItemsMapper.map)
+//    }
+//}
+
+//public typealias RemoteImageCommentsLoader = RemoteLoader<[ImageComment]>
+//
+//public extension RemoteImageCommentsLoader {
+//    convenience init(url: URL, client: HTTPClient) {
+//        self.init(url: url, client: client, mapper: ImageCommentsMapper.map)
+//    }
+//}
