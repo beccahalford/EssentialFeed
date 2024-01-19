@@ -460,7 +460,6 @@
 			children = (
 				468ECE482993E8800049AFF5 /* LoadFeedFromRemoteUseCaseTests.swift */,
 				468CFA712B4040BA00114942 /* LoadFeedImageDataFromRemoteUseCaseTests.swift */,
-				46F7C2002B5A8416009FC0A5 /* LoadImageCommentsFromRemoteUseCaseTests.swift */,
 			);
 			path = FeedAPI;
 			sourceTree = "<group>";
@@ -481,8 +480,6 @@
 				4653F57B2997A00200A1BD9A /* FeedItemMapper.swift */,
 				462E4A6C29FBDDD4004DB74E /* RemoteFeedItem.swift */,
 				468CFA762B40481A00114942 /* RemoteFeedImageDataLoader.swift */,
-				46F7C1FC2B5A83D1009FC0A5 /* ImageCommentsMapper.swift */,
-				46F7C1FE2B5A83EC009FC0A5 /* RemoteImageCommentsLoader.swift */,
 			);
 			path = FeedAPI;
 			sourceTree = "<group>";
@@ -537,6 +534,7 @@
 		46A1BC5B298FDD5900921DD8 /* EssentialFeed */ = {
 			isa = PBXGroup;
 			children = (
+				46F7C20B2B5A9306009FC0A5 /* ImageCommentsAPI */,
 				46F7C2062B5A9129009FC0A5 /* SharedAPI */,
 				46F7C2052B5A90FF009FC0A5 /* SharedAPIInfrastructure */,
 				46F7C2022B5A8CB7009FC0A5 /* ImageCommentsFeature */,
@@ -554,6 +552,7 @@
 		46A1BC67298FDD5900921DD8 /* EssentialFeedTests */ = {
 			isa = PBXGroup;
 			children = (
+				46F7C20C2B5A9322009FC0A5 /* ImageCommentsAPI */,
 				46F7C2092B5A9186009FC0A5 /* SharedAPIInfrastructure */,
 				46F7C2072B5A9159009FC0A5 /* SharedAPI */,
 				46A1BC68298FDD5900921DD8 /* EssentialFeedTests.swift */,
@@ -692,6 +691,23 @@
 				468CFA7B2B404AF600114942 /* URLProtocolStub.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		46F7C20B2B5A9306009FC0A5 /* ImageCommentsAPI */ = {
+			isa = PBXGroup;
+			children = (
+				46F7C1FC2B5A83D1009FC0A5 /* ImageCommentsMapper.swift */,
+				46F7C1FE2B5A83EC009FC0A5 /* RemoteImageCommentsLoader.swift */,
+			);
+			path = ImageCommentsAPI;
+			sourceTree = "<group>";
+		};
+		46F7C20C2B5A9322009FC0A5 /* ImageCommentsAPI */ = {
+			isa = PBXGroup;
+			children = (
+				46F7C2002B5A8416009FC0A5 /* LoadImageCommentsFromRemoteUseCaseTests.swift */,
+			);
+			path = ImageCommentsAPI;
 			sourceTree = "<group>";
 		};
 		46FE693529A906F0009A8E3D /* EssentialFeedAPIEndToEndTests */ = {
