@@ -102,6 +102,8 @@
 		46CD586D2B5E78CE00049479 /* SharedLocalizationTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CD586C2B5E78CE00049479 /* SharedLocalizationTestHelpers.swift */; };
 		46CD586F2B5E79B800049479 /* ResourceLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CD586E2B5E79B800049479 /* ResourceLoadingView.swift */; };
 		46CD58722B5E79DB00049479 /* ResourceLoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CD58712B5E79DB00049479 /* ResourceLoadingViewModel.swift */; };
+		46CD58742B5E7BE700049479 /* ResourceErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CD58732B5E7BE700049479 /* ResourceErrorView.swift */; };
+		46CD58762B5E7BFC00049479 /* ResourceErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CD58752B5E7BFC00049479 /* ResourceErrorViewModel.swift */; };
 		46E856EE2997C340001F0EFC /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E856ED2997C340001F0EFC /* URLSessionHTTPClient.swift */; };
 		46E856F02997C4F5001F0EFC /* URLSessionHTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E856EF2997C4F5001F0EFC /* URLSessionHTTPClientTests.swift */; };
 		46E856F3299939D0001F0EFC /* XCTestCase+MemoryLeakTrackingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E856F2299939D0001F0EFC /* XCTestCase+MemoryLeakTrackingHelper.swift */; };
@@ -265,6 +267,8 @@
 		46CD586C2B5E78CE00049479 /* SharedLocalizationTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedLocalizationTestHelpers.swift; sourceTree = "<group>"; };
 		46CD586E2B5E79B800049479 /* ResourceLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLoadingView.swift; sourceTree = "<group>"; };
 		46CD58712B5E79DB00049479 /* ResourceLoadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLoadingViewModel.swift; sourceTree = "<group>"; };
+		46CD58732B5E7BE700049479 /* ResourceErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceErrorView.swift; sourceTree = "<group>"; };
+		46CD58752B5E7BFC00049479 /* ResourceErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceErrorViewModel.swift; sourceTree = "<group>"; };
 		46E856ED2997C340001F0EFC /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 		46E856EF2997C4F5001F0EFC /* URLSessionHTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientTests.swift; sourceTree = "<group>"; };
 		46E856F2299939D0001F0EFC /* XCTestCase+MemoryLeakTrackingHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTrackingHelper.swift"; sourceTree = "<group>"; };
@@ -665,6 +669,7 @@
 				46CD58662B5E716900049479 /* LoadResourcePresenter.swift */,
 				46CD58682B5E75E700049479 /* Shared.xcstrings */,
 				46CD586E2B5E79B800049479 /* ResourceLoadingView.swift */,
+				46CD58732B5E7BE700049479 /* ResourceErrorView.swift */,
 			);
 			path = SharedPresentation;
 			sourceTree = "<group>";
@@ -682,6 +687,7 @@
 			isa = PBXGroup;
 			children = (
 				46CD58712B5E79DB00049479 /* ResourceLoadingViewModel.swift */,
+				46CD58752B5E7BFC00049479 /* ResourceErrorViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1032,6 +1038,7 @@
 				4619C7C02B481013006E43F3 /* CoreDataFeedStore+FeedImageDataLoader.swift in Sources */,
 				468CFA812B4051DC00114942 /* FeedImageDataStore.swift in Sources */,
 				46BBB4482B4C183D00335765 /* FeedImageDataCache.swift in Sources */,
+				46CD58762B5E7BFC00049479 /* ResourceErrorViewModel.swift in Sources */,
 				468ECE4C2993F9040049AFF5 /* RemoteFeedLoader.swift in Sources */,
 				465125812B403327001F8829 /* FeedImagePresenter.swift in Sources */,
 				4653F57A29979F8800A1BD9A /* HTTPClient.swift in Sources */,
@@ -1055,6 +1062,7 @@
 				462E4A6D29FBDDD4004DB74E /* RemoteFeedItem.swift in Sources */,
 				460B59882AB8AABB0074E763 /* CodableFeedStore.swift in Sources */,
 				46A8A09E2A20C58300563494 /* FeedCachePolicy.swift in Sources */,
+				46CD58742B5E7BE700049479 /* ResourceErrorView.swift in Sources */,
 				465125752B402D4E001F8829 /* FeedPresenter.swift in Sources */,
 				46A1BC74298FDD6E00921DD8 /* FeedItem.swift in Sources */,
 				468CFA7A2B404AB400114942 /* HTTPURLResponse.swift in Sources */,
