@@ -10,6 +10,7 @@ import Foundation
 import EssentialFeed
 import EssentialFeediOS
 
+/*
 final class FeedImageDataLoaderPresentationAdapter<View: FeedImageView, Image>: FeedImageCellControllerDelegate where View.Image == Image {
     private let model: FeedImage
     private let imageLoader: (URL) -> FeedImageDataLoader.Publisher
@@ -59,3 +60,4 @@ final class FeedImageDataLoaderPresentationAdapter<View: FeedImageView, Image>: 
 //        task?.cancel()
     }
 }
+*/
