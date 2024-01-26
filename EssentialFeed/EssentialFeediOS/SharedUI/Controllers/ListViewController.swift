@@ -9,7 +9,9 @@ import UIKit
 import EssentialFeed
 
 public final class ListViewController: UITableViewController, UITableViewDataSourcePrefetching, ResourceLoadingView, ResourceErrorView {
-    @IBOutlet private(set) public var errorView: ErrorView?
+    
+    private(set) public var errorView = ErrorView()
+    
     private var loadingControllers = [IndexPath: CellController]()
     private var onViewIsAppearing: ((ListViewController) -> Void)?
     public var onRefresh: (() -> Void)?
@@ -26,6 +28,7 @@ public final class ListViewController: UITableViewController, UITableViewDataSou
             vc.onViewIsAppearing = nil
         }
         
+        configureErrorView()
         refresh()
     }
 
@@ -45,6 +48,29 @@ public final class ListViewController: UITableViewController, UITableViewDataSou
         onRefresh?()
     }
     
+    
+    private func configureErrorView() {
+        let container = UIView()
+        container.backgroundColor = .clear
+        container.addSubview(errorView)
+
+        errorView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            errorView.leadingAnchor.constraint(equalTo: container.leadingAnchor),
+            container.trailingAnchor.constraint(equalTo: errorView.trailingAnchor),
+            errorView.topAnchor.constraint(equalTo: container.topAnchor),
+            container.bottomAnchor.constraint(equalTo: errorView.bottomAnchor),
+        ])
+
+        tableView.tableHeaderView = container
+
+        errorView.onHide = { [weak self] in
+            self?.tableView.beginUpdates()
+            self?.tableView.sizeTableHeaderToFit()
+            self?.tableView.endUpdates()
+        }
+    }
+    
     public func display(_ cellControllers: [CellController]) {
         loadingControllers = [:]
         tableModel = cellControllers
@@ -55,7 +81,7 @@ public final class ListViewController: UITableViewController, UITableViewDataSou
     }
 
     public func display(_ viewModel: ResourceErrorViewModel) {
-        errorView?.message = viewModel.message
+        errorView.message = viewModel.message
     }
     
     public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -73,8 +99,8 @@ public final class ListViewController: UITableViewController, UITableViewDataSou
     }
     
     public override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let dsPrefetching = cellController(forRowAt: indexPath).dataSourcePrefetching
-        dsPrefetching?.tableView(tableView, prefetchRowsAt: [indexPath])
+        let delegate = cellController(forRowAt: indexPath).delegate
+        delegate?.tableView?(tableView, willDisplay: cell, forRowAt: indexPath)
     }
     
     public func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {

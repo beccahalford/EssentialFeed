@@ -23,12 +23,16 @@ extension ListViewController {
         ds?.tableView?(tableView, cancelPrefetchingForRowsAt: [index])
     }
     
+    func simulateErrorViewTap() {
+        errorView.simulateTap()
+    }
+    
     func renderedFeedImageData(at index: Int) -> Data? {
         simulateFeedImageViewVisible(at: index)?.renderedImage
     }
     
     var errorMessage: String? {
-        errorView?.message
+        errorView.message
     }
     
     var isShowingLoadingIndicator: Bool {
