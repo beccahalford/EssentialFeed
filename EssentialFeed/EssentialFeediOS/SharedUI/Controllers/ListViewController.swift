@@ -35,6 +35,7 @@ public final class ListViewController: UITableViewController, UITableViewDataSou
         }
         
         configureTableView()
+        configureTraitCollectionObservers()
         refresh()
     }
 
@@ -60,9 +61,11 @@ public final class ListViewController: UITableViewController, UITableViewDataSou
         tableView.tableHeaderView = errorView.makeContainer()
     }
         
-    public override func traitCollectionDidChange(_ previous: UITraitCollection?) {
-        if previous?.preferredContentSizeCategory != traitCollection.preferredContentSizeCategory {
-            tableView.reloadData()
+    private func configureTraitCollectionObservers() {
+        registerForTraitChanges(
+            [UITraitPreferredContentSizeCategory.self]
+        ) { (self: Self, previous: UITraitCollection) in
+            self.tableView.reloadData()
         }
     }
     
