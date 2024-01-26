@@ -34,6 +34,7 @@ public final class ListViewController: UITableViewController, UITableViewDataSou
             vc.onViewIsAppearing = nil
         }
         
+        dataSource.defaultRowAnimation = .fade
         tableView.dataSource = dataSource
         configureErrorView()
         refresh()
