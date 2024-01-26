@@ -8,7 +8,7 @@
 import EssentialFeediOS
 import UIKit
 
-extension FeedViewController {
+extension ListViewController {
     func simulateFeedImageViewNearVisible(at row: Int) {
         let ds = tableView.prefetchDataSource
         let index = IndexPath(row: row, section: feedImagesSection)
