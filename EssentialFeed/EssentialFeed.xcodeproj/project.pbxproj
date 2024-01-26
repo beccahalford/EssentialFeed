@@ -595,10 +595,10 @@
 		46A1BC67298FDD5900921DD8 /* EssentialFeedTests */ = {
 			isa = PBXGroup;
 			children = (
-				46CD588E2B5EC58300049479 /* ImageCommentsPresentation */,
 				46A1BC68298FDD5900921DD8 /* EssentialFeedTests.swift */,
-				46CD58632B5E714700049479 /* SharedPresentation */,
 				46E856F129993995001F0EFC /* Helpers */,
+				46CD588E2B5EC58300049479 /* ImageCommentsPresentation */,
+				46CD58632B5E714700049479 /* SharedPresentation */,
 				46F7C20C2B5A9322009FC0A5 /* ImageCommentsAPI */,
 				46F7C2092B5A9186009FC0A5 /* SharedAPIInfrastructure */,
 				46F7C2072B5A9159009FC0A5 /* SharedAPI */,
