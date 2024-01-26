@@ -8,13 +8,13 @@
 import UIKit
 import EssentialFeed
 
-public class ImageCommentCellController: NSObject, CellController {
+public class ImageCommentCellController: NSObject {
     private let model: ImageCommentViewModel
     
     public init(model: ImageCommentViewModel) {
         self.model = model
     }
-    
+
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         1
     }
@@ -28,5 +28,4 @@ public class ImageCommentCellController: NSObject, CellController {
     }
     
     public func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {}
-    
 }
