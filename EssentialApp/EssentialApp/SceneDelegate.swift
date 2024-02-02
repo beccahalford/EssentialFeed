@@ -56,10 +56,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func configureWindow() {
         window?.rootViewController = navigationController
-        
-//        let feedViewController = FeedUIComposer.feedComposedWith(feedLoader: makeRemoteFeedLoaderWithLocalFallback,
-//                                                                 imageLoader: makeLocalImageLoaderWithRemoteFallback)
-//        window?.rootViewController = UINavigationController(rootViewController: feedViewController)
         window?.makeKeyAndVisible()
     }
         
@@ -68,7 +64,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     private func showComments(for image: FeedImage) {
-        let url = baseURL.appendingPathComponent("/v1/image/\(image.id)/comments")
+        let url = ImageCommentsEndpoint.get(image.id).url(baseURL: baseURL)
         let comments = CommentsUIComposer.commentsComposedWith(commentsLoader: makeRemoteCommentsLoader(url: url))
         navigationController.pushViewController(comments, animated: true)
     }
@@ -83,28 +79,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     private func makeRemoteFeedLoaderWithLocalFallback() -> AnyPublisher<[FeedImage], Error> {
+        let url = FeedEndpoint.get.url(baseURL: baseURL)
         return httpClient
-            .getPublisher(url: baseURL.appendingPathComponent("/v1/feed"))
+            .getPublisher(url: url)
             .tryMap(FeedItemsMapper.map)
             .caching(to: localFeedLoader)
             .fallback(to: localFeedLoader.loadPublisher)
-//        remoteFeedLoader
-//            .loadPublisher()
-//            .caching(to: localFeedLoader)
-//            .fallback(to: localFeedLoader.loadPublisher)
     }
     
     private func makeLocalImageLoaderWithRemoteFallback(url: URL) -> FeedImageDataLoader.Publisher {
-//        let remoteImageLoader = RemoteFeedImageDataLoader(client: httpClient)
         let localImageLoader = LocalFeedImageDataLoader(store: store)
-
-//        return localImageLoader
-//            .loadImageDataPublisher(from: url)
-//            .fallback(to: {
-//                remoteImageLoader
-//                    .loadImageDataPublisher(from: url)
-//                    .caching(to: localImageLoader, using: url)
-//            })
         return localImageLoader
             .loadImageDataPublisher(from: url)
             .fallback(to: { [httpClient] in
@@ -114,5 +98,4 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     .caching(to: localImageLoader, using: url)
             })
     }
-    
 }
