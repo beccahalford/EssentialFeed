@@ -18,20 +18,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     private lazy var httpClient: HTTPClient = {
         URLSessionHTTPClient(session: URLSession(configuration: .ephemeral))
     }()
+    
     private lazy var store: FeedStore & FeedImageDataStore = {
         try! CoreDataFeedStore(storeURL: NSPersistentContainer
             .defaultDirectoryURL()
             .appendingPathComponent("feed-store.sqlite"))
     }()
-    private let remoteURL = URL(string: "https://ile-api.essentialdeveloper.com/essential-feed/v1/feed")!
+        
     private lazy var localFeedLoader: LocalFeedLoader = {
         LocalFeedLoader(store: store, currentDate: Date.init)
     }()
-    private lazy var remoteFeedLoader = {
-//        let url = URL(string: "https://ile-api.essentialdeveloper.com/essential-feed/v1/feed")!
-//        return RemoteFeedLoader(url: url, client: httpClient)
-        return RemoteLoader(url: remoteURL, client: httpClient, mapper: FeedItemsMapper.map)
-    }()
+    
+    private lazy var baseURL = URL(string: "https://ile-api.essentialdeveloper.com/essential-feed")!
+
+    private lazy var navigationController = UINavigationController(
+        rootViewController: FeedUIComposer.feedComposedWith(
+            feedLoader: makeRemoteFeedLoaderWithLocalFallback,
+            imageLoader: makeLocalImageLoaderWithRemoteFallback,
+            selection: showComments))
     
     convenience init(httpClient: HTTPClient, store: FeedStore & FeedImageDataStore) {
         self.init()
@@ -51,60 +55,40 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func configureWindow() {
-        let feedViewController = FeedUIComposer.feedComposedWith(feedLoader: makeRemoteFeedLoaderWithLocalFallback,
-                                                                 imageLoader: makeLocalImageLoaderWithRemoteFallback)
-        window?.rootViewController = UINavigationController(rootViewController: feedViewController)
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
-    
-//    func configureWindow() {
-//        let remoteURL = URL(string: "https://ile-api.essentialdeveloper.com/essential-feed/v1/feed")!
-////        let remoteClient = makeRemoteClient()
-//        let remoteFeedLoader = RemoteFeedLoader(url: remoteURL, client: httpClient)
-//        let remoteImageLoader = RemoteFeedImageDataLoader(client: httpClient)
-//        
-//        let localImageLoader = LocalFeedImageDataLoader(store: store)
-//        
-//        let feedViewController = FeedUIComposer.feedComposedWith(
-//            feedLoader: FeedLoaderWithFallbackComposite(primary: FeedLoaderCacheDecorator(decoratee: remoteFeedLoader,
-//                                                                                          cache: localFeedLoader),
-//                                                        fallback: localFeedLoader),
-//            imageLoader: FeedImageDataLoaderWithFallbackComposite(primary: localImageLoader,
-//                                                                  fallback: FeedImageDataLoaderCacheDecorator(
-//                                                                    decoratee: remoteImageLoader,
-//                                                                    cache: localImageLoader)))
-//        
-//        window?.rootViewController = UINavigationController(rootViewController: feedViewController)
-//        window?.makeKeyAndVisible()
-//    }
-    
+        
     func sceneWillResignActive(_ scene: UIScene) {
         localFeedLoader.validateCache { _ in }
     }
     
+    private func showComments(for image: FeedImage) {
+        let url = ImageCommentsEndpoint.get(image.id).url(baseURL: baseURL)
+        let comments = CommentsUIComposer.commentsComposedWith(commentsLoader: makeRemoteCommentsLoader(url: url))
+        navigationController.pushViewController(comments, animated: true)
+    }
+
+    private func makeRemoteCommentsLoader(url: URL) -> () -> AnyPublisher<[ImageComment], Error> {
+        return { [httpClient] in
+            return httpClient
+                .getPublisher(url: url)
+                .tryMap(ImageCommentsMapper.map)
+                .eraseToAnyPublisher()
+        }
+    }
+    
     private func makeRemoteFeedLoaderWithLocalFallback() -> AnyPublisher<[FeedImage], Error> {
+        let url = FeedEndpoint.get.url(baseURL: baseURL)
         return httpClient
-            .getPublisher(url: remoteURL)
+            .getPublisher(url: url)
             .tryMap(FeedItemsMapper.map)
             .caching(to: localFeedLoader)
             .fallback(to: localFeedLoader.loadPublisher)
-//        remoteFeedLoader
-//            .loadPublisher()
-//            .caching(to: localFeedLoader)
-//            .fallback(to: localFeedLoader.loadPublisher)
     }
     
     private func makeLocalImageLoaderWithRemoteFallback(url: URL) -> FeedImageDataLoader.Publisher {
-//        let remoteImageLoader = RemoteFeedImageDataLoader(client: httpClient)
         let localImageLoader = LocalFeedImageDataLoader(store: store)
-
-//        return localImageLoader
-//            .loadImageDataPublisher(from: url)
-//            .fallback(to: {
-//                remoteImageLoader
-//                    .loadImageDataPublisher(from: url)
-//                    .caching(to: localImageLoader, using: url)
-//            })
         return localImageLoader
             .loadImageDataPublisher(from: url)
             .fallback(to: { [httpClient] in
@@ -114,27 +98,4 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     .caching(to: localImageLoader, using: url)
             })
     }
-
-//    func makeRemoteClient() -> HTTPClient {
-//        httpClient
-//    }
-    
 }
-
-//extension RemoteLoader: FeedLoader where Resource == [FeedImage] {}
-
-//public typealias RemoteFeedLoader = RemoteLoader<[FeedImage]>
-//
-//public extension RemoteFeedLoader {
-//    convenience init(url: URL, client: HTTPClient) {
-//        self.init(url: url, client: client, mapper: FeedItemsMapper.map)
-//    }
-//}
-
-//public typealias RemoteImageCommentsLoader = RemoteLoader<[ImageComment]>
-//
-//public extension RemoteImageCommentsLoader {
-//    convenience init(url: URL, client: HTTPClient) {
-//        self.init(url: url, client: client, mapper: ImageCommentsMapper.map)
-//    }
-//}
