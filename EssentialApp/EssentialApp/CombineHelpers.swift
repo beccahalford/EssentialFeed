@@ -9,6 +9,32 @@ import Combine
 import EssentialFeed
 import Foundation
 
+public extension Paginated {
+    init(items: [Item], loadMorePublisher: (() -> AnyPublisher<Self, Error>)?) {
+        self.init(items: items, loadMore: loadMorePublisher.map { publisher in
+            return { completion in
+                publisher().subscribe(Subscribers.Sink(receiveCompletion: { result in
+                    if case let .failure(error) = result {
+                        completion(.failure(error))
+                    }
+                }, receiveValue: { result in
+                    completion(.success(result))
+                }))
+            }
+        })
+    }
+    
+    var loadMorePublisher: (() -> AnyPublisher<Self, Error>)? {
+        guard let loadMore = loadMore else { return nil }
+
+        return {
+            Deferred {
+                Future(loadMore)
+            }.eraseToAnyPublisher()
+        }
+    }
+}
+
 // MARK: - HTTPClient
 
 public extension HTTPClient {
@@ -71,16 +97,22 @@ public extension LocalFeedLoader {
     }
 }
 
-extension Publisher where Output == [FeedImage] {
-    func caching(to cache: FeedCache) -> AnyPublisher<Output, Failure> {
-        handleEvents(receiveOutput: cache.saveIgnoringResult)
-        .eraseToAnyPublisher()
+extension Publisher {
+    func caching(to cache: FeedCache) -> AnyPublisher<Output, Failure> where Output == [FeedImage] {
+        handleEvents(receiveOutput: cache.saveIgnoringResult).eraseToAnyPublisher()
+    }
+
+    func caching(to cache: FeedCache) -> AnyPublisher<Output, Failure> where Output == Paginated<FeedImage> {
+        handleEvents(receiveOutput: cache.saveIgnoringResult).eraseToAnyPublisher()
     }
 }
-
 private extension FeedCache {
-    func saveIgnoringResult(_ feed: [FeedImage]){
+    func saveIgnoringResult(_ feed: [FeedImage]) {
         save(feed) { _ in }
+    }
+
+    func saveIgnoringResult(_ page: Paginated<FeedImage>) {
+        saveIgnoringResult(page.items)
     }
 }
 
