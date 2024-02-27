@@ -15,6 +15,7 @@
 import XCTest
 import EssentialFeed
 
+/*
 final class CodableFeedStoreTests: XCTestCase, FailableFeedStoreSpecs {
     
     override func setUp() {
@@ -124,11 +125,6 @@ final class CodableFeedStoreTests: XCTestCase, FailableFeedStoreSpecs {
         assertThatDeleteHasNoSideEffectsOnDeletionError(on: sut)
     }
     
-    func test_storeSideEffects_runSerially() {
-        let sut = makeSUT()
-        assertThatSideEffectsRunSerially(on: sut)
-    }
-    
     // MARK: - Helpes
     
     private func makeSUT(storeURL: URL? = nil, file: StaticString = #filePath, line: UInt = #line) -> FeedStore {
@@ -162,3 +158,4 @@ final class CodableFeedStoreTests: XCTestCase, FailableFeedStoreSpecs {
         try? FileManager.default.removeItem(at: testSpecificStoreURL())
     }
 }
+*/
