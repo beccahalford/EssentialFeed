@@ -5,6 +5,7 @@
 //  Created by Rebecca Woodman-Halford on 30/12/2023.
 //
 
+/*
 import Foundation
 
 public final class RemoteFeedImageDataLoader: FeedImageDataLoader {
@@ -57,3 +58,4 @@ public final class RemoteFeedImageDataLoader: FeedImageDataLoader {
         return task
     }
 }
+*/
