@@ -15,6 +15,7 @@
 import XCTest
 import EssentialFeed
 
+/*
 final class CodableFeedStoreTests: XCTestCase, FailableFeedStoreSpecs {
     
     override func setUp() {
@@ -157,3 +158,4 @@ final class CodableFeedStoreTests: XCTestCase, FailableFeedStoreSpecs {
         try? FileManager.default.removeItem(at: testSpecificStoreURL())
     }
 }
+*/

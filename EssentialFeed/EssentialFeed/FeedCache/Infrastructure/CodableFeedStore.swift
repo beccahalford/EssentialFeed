@@ -7,6 +7,7 @@
 
 import Foundation
 
+/*
 public class CodableFeedStore: FeedStore {
     
     private struct Cache: Codable {
@@ -93,3 +94,4 @@ public class CodableFeedStore: FeedStore {
         }
     }
 }
+*/
